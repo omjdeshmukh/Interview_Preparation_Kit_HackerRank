@@ -1,0 +1,2 @@
+# Interview_Preparation_Kit_HackerRank
+interview preparation kit in javaScript
