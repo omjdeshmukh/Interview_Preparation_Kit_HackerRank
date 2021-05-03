@@ -1,0 +1,99 @@
+//short array
+
+var arr = [10,3,4,5,2,6,7]
+
+function min_num(array){
+   if(!array.length){
+       console.log("array should not be empty")
+   }    
+   else if(array.length === 1) {
+       return array[0]
+   }
+   else {
+       let currentMin = array[0]
+       for (let i = 1; i <= array.length; i++ ){
+           if(array[i] < currentMin){
+               currentMin = array[i]
+           }
+       }return currentMin
+   }
+}
+
+
+console.log(min_num(arr))
+
+
+//second method/approch
+
+var arr = [10,3,4,5,2,6,7]
+
+function sortArrayAndGetMin(array){
+    if(!array.length){
+        console.log("empty")
+    }   
+    else if(array.length === 1){
+        return array[0]
+    } 
+    else {
+        for(let i = 0; i < array.length; i++){
+
+              let outer = array[i]
+
+            for(let j = i+1; j < array.length; j++){
+
+              let inner = array[j]
+
+              if(outer > inner){
+                
+                array[i] = inner
+                array[j] = outer
+                inner = array[j]
+                outer = array[i]
+            }
+
+            }
+        }return array[0]
+    }
+}
+
+console.log(sortArrayAndGetMin(arr))
+
+
+
+//counting frequency 
+
+// [1,2,3,4] -> [1,4,9,16]
+
+
+function isSquare(arr1, arr2){
+    for(let i = 0; i < arr1.length; i++){
+        let sq = false
+        for(let j = 0; j < arr2.length; j++){
+            if(arr1[i] * arr1[i] === arr2[j]){
+                sq = true
+            }
+            if(j === arr2.length -1){
+                if(!sq){
+                    return false
+                }
+            }
+        }
+    }
+    return true
+}
+
+let ar1 = [1,2,3,4,5]
+
+let ar2 = [1,4,9,16,25]
+
+let res = isSquare(ar1,ar2)
+
+console.log(res)
+
+
+
+
+
+
+
+
